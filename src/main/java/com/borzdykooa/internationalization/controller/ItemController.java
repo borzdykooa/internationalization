@@ -17,7 +17,8 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping("/items")
-    public ItemDto getItem(@RequestParam Integer code, @RequestParam Language language) {
+    public ItemDto getItem(@RequestParam("code") Integer code,
+                           @RequestParam("language") Language language) {
         return itemService.findByCodeAndLanguage(code, language);
     }
 }
